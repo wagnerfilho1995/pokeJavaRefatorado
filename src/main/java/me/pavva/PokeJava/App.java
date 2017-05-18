@@ -216,9 +216,9 @@ public class App {
         s.close();
         
     	}
-        
-    	System.out.println("Sorry, Wrong answer =/");
-        
+    	else{
+    		System.out.println("Sorry, Wrong answer =/");
+    	}
     }
     	
 }
