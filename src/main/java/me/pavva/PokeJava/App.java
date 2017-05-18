@@ -11,6 +11,11 @@ public class App {
 		else if(Pokemon.getType() == "water") return dano = new DanoAgua();
 		else if(Pokemon.getType() == "grass") return dano = new DanoPlanta();
 		else if(Pokemon.getType() == "eletric") return dano = new DanoEletrico();
+		else if(Pokemon.getType() == "rock") return dano = new DanoRocha();
+		else if(Pokemon.getType() == "ghost") return dano = new DanoFantasma();
+		else if(Pokemon.getType() == "flying") return dano = new DanoVoador();
+		else if(Pokemon.getType() == "fighting") return dano = new DanoLutador();
+		else if(Pokemon.getType() == "psychic") return dano = new DanoPsiquico();
 		else return dano = new DanoNormal();
 	}
 	
@@ -36,6 +41,8 @@ public class App {
         
     	BancoUsuarios banco = new BancoProxy(answerOne, answerTwo);
         
+    	if(banco.getTotalUsuarios() != null){
+    	
         /*final String ANSI_RESET = "\u001B[0m"; //ANSI Color Codes
         final String ANSI_BLACK = "\u001B[30m";
         final String ANSI_RED = "\u001B[31m";
@@ -62,10 +69,10 @@ public class App {
         Pokemon Pikachu = new Pokemon("Pikachu", "electric", 120, 0, "Thunderbolt", "Electro Ball", "Volt Tackle", "Thunder");
         Pokemon Geogude = new Pokemon("Geogude", "rock", 120, 0, "Tackle", "Rollout", "Rock Throw", "Earthquake");
         Pokemon Eevee = new Pokemon("Eevee", "normal", 120, 0, "Tackle", "Bite", "Swift", "Take Down");
-        Pokemon Mankey = new Pokemon("Mankey", "Fighting", 120, 0, "Low Kick", "Scratch", "Karate Chop", "Cross Chop");
-        Pokemon Pidgey = new Pokemon("Pidgey", "Flying", 120, 0, "Tackle", "Gust", "Wing Attack", "Hurricane");
-        Pokemon Wobbuffet = new Pokemon("Wobbuffet", "Psychic", 120, 0, "Counter", "Mirror Coat", "Safeguard", "Destiny Bond");
-        Pokemon Gastly = new Pokemon("Gastly", "Ghost", 120, 0, "Lick", "Dark Pulse", "Shadow Ball", "Hex");
+        Pokemon Mankey = new Pokemon("Mankey", "fighting", 120, 0, "Low Kick", "Scratch", "Karate Chop", "Cross Chop");
+        Pokemon Pidgey = new Pokemon("Pidgey", "flying", 120, 0, "Tackle", "Gust", "Wing Attack", "Hurricane");
+        Pokemon Wobbuffet = new Pokemon("Wobbuffet", "psychic", 120, 0, "Counter", "Mirror Coat", "Safeguard", "Destiny Bond");
+        Pokemon Gastly = new Pokemon("Gastly", "ghost", 120, 0, "Lick", "Dark Pulse", "Shadow Ball", "Hex");
  
         Pokemon[] poke = new Pokemon[]{Chimchar, Bulbasaur, Squirtle, Pikachu, Geogude, Eevee, Mankey, Pidgey, Wobbuffet, Gastly};
 
@@ -203,11 +210,15 @@ public class App {
 
             }
 
-
         }
 
         System.gc();
         s.close();
-
+        
+    	}
+        
+    	System.out.println("Sorry, Wrong answer =/");
+        
     }
+    	
 }

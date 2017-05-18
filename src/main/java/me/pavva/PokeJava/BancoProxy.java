@@ -22,15 +22,21 @@ public class BancoProxy extends BancoUsuarios {
     @Override
     public String getTotalUsuarios() {
         if (temPermissaoDeAcesso()) {
-           	System.out.println("passou");
-            
             return super.getTotalUsuarios();
         }
         return null;
     }
  
     private boolean temPermissaoDeAcesso() {
-        return usuario == "Fire" && senha == "Pikachu";
+    
+    	usuario =  usuario.toUpperCase();
+    	senha = senha.toUpperCase();
+     
+    	if(usuario.equals("FIRE") && senha.equals("PIKACHU")){
+    	  	return true;
+        }
+    	
+        return false;
     }
 
 }
